@@ -134,7 +134,7 @@ public class SimpleRouteLocator implements RouteLocator, Ordered {
 			int index = route.getPath().indexOf("*") - 1;
 			if (index > 0) {
 				String routePrefix = route.getPath().substring(0, index);
-				targetPath = targetPath.replaceFirst(routePrefix, "");
+				targetPath = targetPath.split(routePrefix)[1];
 				prefix = prefix + routePrefix;
 			}
 		}
